@@ -10,5 +10,6 @@ conversations are not of negative type. The
 task was thus to build a model which could
 make prediction to classify the comments into
 various categories.
-![image](https://github.com/Nishishrivastava/Toxic_comment_classification/assets/83336594/a76fefa7-39e5-403f-af6d-ee37063cfc79)
+![Screenshot (252)](https://github.com/Nishishrivastava/Toxic_comment_classification/assets/83336594/c0810470-6e0a-4f44-af74-81f2e534b085)
+
 
