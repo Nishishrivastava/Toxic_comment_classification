@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html >
+<head>
+ <title>Comment Toxicity Classification</title>
+ <link rel="stylesheet" href="{% static 'the_project/style.css' %}">
+</head>
+<body>
+  <div class ="login">
+    <h1>Is your comment toxic?</h1>
+    <form action="{% url 'predict' %}" method="post">
+    {% csrf_token %}
+    <input id='text' type="text" name="text" autocomplete="off" placeholder="Enter your text" required="required" size="25"/>
+    <button id='button' type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>    
+    
+  <h3>{{ data }} <br><br><br>
+      Prob (Toxic): {{ pred_tox }} {{ sym }} <br><br>
+      Prob (Severe Toxic): {{ pred_sev }} {{ sym }} <br><br>
+      Prob (Obscene): {{ pred_obs }} {{ sym }} <br><br>
+      Prob (Insult): {{ pred_ins }} {{ sym }} <br><br>
+      Prob (Threat): {{ pred_thr }} {{ sym }} <br><br>
+      Prob (Identity Hate): {{ pred_ide }} {{ sym }} <br><br><br>
+      <span style="color: red">{{ st }}</span>
+  </h3>          
+
+  </div>
+    
+    {% block graph%}
+    <div style="marging : 50px;"><img src= "{% static 'the_project/' %}{{ graph_filename }}">" </div>
+    {% endblock %}
+</body>
+</html>
